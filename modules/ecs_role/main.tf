@@ -27,6 +27,36 @@ resource "aws_iam_role_policy_attachment" "ecs_task_exec_policy" {
 }
 
 
+#=================== Attach SSM Policy =======================================================
+
+resource "aws_iam_policy" "ssm_parameter_store" {
+  name = "ssm_parameter_store"
+
+  policy = <<EOF
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "EcsSSMParameterStore",
+      "Effect": "Allow",
+      "Action": [
+        "ssm:GetParameters",
+        "ssm:GetParameter"
+      ],
+      "Resource": "*"
+    }
+  ]
+}
+EOF
+}
+
+resource "aws_iam_role_policy_attachment" "ssm_parameter_store" {
+  role       = aws_iam_role.ecs_task_exec_role.id
+  policy_arn = aws_iam_policy.ssm_parameter_store.arn
+}
+
+#=================== End Attach SSM Policy =======================================================
+
 # ECS EC2 requires instance profile to interact with ECS, in constrast with Fargate which is automatically managed.
 # ecs_task_assume_role allow services( ecs-tasks.amazonaws.com and ec2.amazonaws.com ) to act on our behalf
 resource "aws_iam_role" "ecs_instance_role" {
