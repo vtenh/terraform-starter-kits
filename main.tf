@@ -127,8 +127,6 @@ module "iam_ecs" {
 #   max_count             = var.max_count
 #   min_count             = var.min_count
 #   desired_count         = var.desired_count
-#   container_cpu         = var.container_cpu
-#   container_memory      = var.container_memory
 #   container_port        = var.container_port
 #   iam_instance_profile  = module.iam_ecs.instance_profile_name
 #   execution_role_arn    = module.iam_ecs.execution_role_arn

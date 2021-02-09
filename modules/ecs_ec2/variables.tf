@@ -52,19 +52,6 @@ variable "min_count" {
 variable "desired_count" {
   default = 1
 }
-
-variable "container_cpu" {
-  description = "The number of CPU for docker container, 1Cpu unit = 1028"
-  type        = string
-  default     = "1024"
-}
-
-variable "container_memory" {
-  description = "The amount of memory given to docker container in MB"
-  type        = string
-  default     = "1024"
-}
-
 variable "container_definitions" {
   description = "Container definition. data.template_file.container_def.rendered"
   type        = string
