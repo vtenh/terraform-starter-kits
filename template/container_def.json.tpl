@@ -9,6 +9,16 @@
       {
         "containerPort": ${container_port},
         "protocol": "tcp"
+      },
+      {
+        "containerPort": 22,
+        "protocol": "tcp"
+      }
+    ],
+    "secrets": [
+      {
+        "name": "SSH_PUBLIC_KEY",
+        "valueFrom": "${ssh_public_key_arn}"
       }
     ],
     "environment": [

@@ -39,6 +39,7 @@ locals {
     redis_url          = local.redis_url
     sidekiq_username   = var.app_environments.sidekiq_username
     sidekiq_password   = var.app_environments.sidekiq_password
+    ssh_public_key_arn = aws_ssm_parameter.ssh_public_key.arn
   })
 
   web_container_template_vars = merge(local.container_template_vars, {

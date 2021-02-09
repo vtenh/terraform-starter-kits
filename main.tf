@@ -88,6 +88,16 @@ resource "aws_key_pair" "ec2" {
   public_key = file(var.ssh_public_key_file)
 }
 
+resource "aws_ssm_parameter" "ssh_public_key" {
+  name  = "ssh_public_key"
+  type  = "SecureString"
+  value = file(var.ssh_public_key_file)
+
+  lifecycle {
+    ignore_changes = [value]
+  }
+}
+
 module "iam_ecs" {
   source = "./modules/ecs_role"
   name   = lower(var.name)
