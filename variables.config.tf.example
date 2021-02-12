@@ -91,7 +91,20 @@ variable "min_count" {
   default = 1
 }
 
+variable "queue_max_count" {
+  default = 2
+}
+
+variable "queue_min_count" {
+  default = 1
+}
+
+
 variable "desired_count" {
+  default = 1
+}
+
+variable "queue_desired_count" {
   default = 1
 }
 

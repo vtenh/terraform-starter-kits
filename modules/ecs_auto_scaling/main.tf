@@ -49,7 +49,7 @@ resource "aws_appautoscaling_policy" "main_scale_down" {
 #============================ Memory Variant ======================================================
 resource "aws_cloudwatch_metric_alarm" "memory_high" {
   count               = var.metric_type == "Memory" ? 1 : 0
-  alarm_name          = "${var.cluster_name}-High CPU"
+  alarm_name          = "${var.cluster_name}-High Memory"
   comparison_operator = "GreaterThanOrEqualToThreshold"
   evaluation_periods  = "2"
   metric_name         = "MemoryUtilization"
@@ -71,7 +71,7 @@ resource "aws_cloudwatch_metric_alarm" "memory_high" {
 
 resource "aws_cloudwatch_metric_alarm" "memory_low" {
   count               = var.metric_type == "Memory" ? 1 : 0
-  alarm_name          = "${var.cluster_name}-Low CPU"
+  alarm_name          = "${var.cluster_name}-Low Memory"
   comparison_operator = "LessThanOrEqualToThreshold"
   evaluation_periods  = "2"
   metric_name         = "MemoryUtilization"

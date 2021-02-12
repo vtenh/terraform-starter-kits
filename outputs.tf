@@ -48,10 +48,11 @@ output "account" {
 
 output "fargate_lb" {
   value = {
-    lb_dns_name  = module.ecs_fargate.lb_dns_name
-    lb_zone_id   = module.ecs_fargate.lb_zone_id
+    lb_dns_name  = module.ecs_fargate_alb.lb_dns_name
+    lb_zone_id   = module.ecs_fargate_alb.lb_zone_id
     cluster_id   = module.ecs_fargate.cluster_id
     cluster_name = module.ecs_fargate.cluster_name
+    service_name = module.ecs_fargate.service_name
   }
 }
 
@@ -64,9 +65,9 @@ output "route53_dns" {
   }
 }
 
-output "ecs_task" {
-  value = data.template_file.sitemap.rendered
-}
+# output "ecs_task" {
+#   value = data.template_file.sitemap.rendered
+# }
 
 output "redis" {
   value = {
@@ -83,6 +84,10 @@ output "memcached" {
   }
 }
 
-output "migration_comand" {
-  value = module.run_migration.command
+output "alb_target_group_arn" {
+  value = module.ecs_fargate_alb.target_group_arn
+}
+
+output "local_exec_migration" {
+  value = module.local_exec_migration.command
 }
