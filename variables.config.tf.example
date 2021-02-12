@@ -133,11 +133,14 @@ variable "cors_local_sites" {
 
 variable "app_environments" {
   default = {
-    rails_master_key    = ""
-    device_secret_key   = ""
     asset_host_url      = "
-    host                = "
+    device_secret_key   = ""
+    exception_notification_enable = "yes"
+    exception_slack_webhook_url   = ""
+    exception_channel_id          = ""
     firebase_project_id = ""
+    host                = "
+    rails_master_key    = ""
     rails_min_instances = 4
     rails_max_instance  = 6
     sidekiq_username    = ""
