@@ -10,7 +10,7 @@ locals {
 
   ecs_ec2_app_name         = "${var.name}-ec2"
   ecs_fargate_app_name     = "${var.name}-fargate"
-  ecs_fargate_sitemap      = "${var.name}-sitemap"
+  ecs_fargate_cron         = "${var.name}-cron"
   ecs_fargate_db_migration = "${var.name}-db-migration"
   ecs_queue_name           = "${var.name}-queue"
 

@@ -5,9 +5,34 @@ variable "name" {
   description = "Ecs fargate name"
   type        = string
 }
+variable "container_insights" {
+  type    = bool
+  default = true
+}
+variable "cpu" {
+  description = "The number of CPU value. 1024 is equal 1CPU unit"
+  type        = string
+}
+variable "memory" {
+  description = "Then number of memory in MB"
+  type        = string
+}
 
-variable "container_name" {
+variable "container_definitions" {
+  description = "Container definition. data.template_file.container_def.rendered"
+  type        = string
+}
+
+variable "task_role_arn" {
   type = string
+}
+variable "execution_role_arn" {
+  type = string
+}
+
+variable "desired_count" {
+  description = "The number of desired containers"
+  default     = 1
 }
 
 variable "security_group_ids" {
@@ -20,75 +45,24 @@ variable "subnet_ids" {
   type        = list
 }
 
-variable "vpc_id" {
-  description = "The id of your vpc. e.g. aws_vpc.main.id"
+variable "use_load_balancer" {
+  default = true
+}
+variable "target_group_arn" {
+
+  description = "elastic load balancer target group arn. Optional if use_load_balancer is false "
   type        = string
+  default     = ""
+
 }
 
-variable "health_check_path" {
-  description = "Health check path of your http. e.g /health_check"
-
-  default = "/health_check"
-}
-
-variable "cpu" {
-  description = "The number of CPU value. 1024 is equal 1CPU unit"
+variable "container_name" {
+  description = "Optional if use_load_balancer is false"
   type        = string
-}
-
-variable "memory" {
-  description = "Then number of memory in MB"
-  type        = string
-}
-
-variable "desired_count" {
-  description = "The number of desired containers"
-  default     = 1
-}
-
-variable "max_count" {
-  description = "The number of max_capacity for autoscalling group"
-  default     = 4
-}
-
-variable "min_count" {
-  description = "The number of min_capacity for autoscalling group"
-  default     = 1
-}
-
-variable "container_definitions" {
-  description = "Container definition. data.template_file.container_def.rendered"
-  type        = string
+  default     = ""
 }
 
 variable "container_port" {
-  default = 80
-}
-
-variable "execution_role_arn" {
-  type = string
-}
-
-variable "task_role_arn" {
-  type = string
-}
-
-variable "acm_certificate_arn" {
-  description = "The ARN of your SSL cert from ACM"
-  type        = string
-}
-
-variable "metric_type" {
-  description = "CW Metric type (CPU or Memory) to use to trigger auto scalling. Default to CPU"
-  default     = "CPU"
-}
-
-variable "domain_name" {
-  description = "The domain name. e.g vtenh.com"
-  type        = string
-}
-
-variable "container_insights" {
-  type    = bool
-  default = true
+  description = "Optional if use_load_balancer is false"
+  default     = 80
 }
