@@ -14,3 +14,10 @@ variable "lb_zone_id" {
 variable "sendgrid_settings" {
   default = []
 }
+
+variable "cdn" {
+  default = {
+    sub_domain = ""
+    cloudfront_domain_name = ""
+  }
+}

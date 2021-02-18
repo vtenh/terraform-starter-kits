@@ -22,6 +22,7 @@
       }
     ],
     "environment": [
+      {"name": "ACTIVE_STORAGE_CDN", "value": "${active_storage_cdn}"},
       {"name": "APP_NAME", "value": "${app_name}"},
       {"name": "ASSET_HOST_URL", "value": "${asset_host_url}"},
       {"name": "AWS_BUCKET_NAME", "value": "${bucket_Name}"},
@@ -49,6 +50,7 @@
       {"name": "SMTP_SERVER", "value": "${smtp_server}"},
       {"name": "SMTP_USERNAME", "value": "${smtp_username}"},
       {"name": "SMTP_PASSWORD", "value": "${smtp_password}"},
+      {"name": "TIME_ZONE", "value": "${time_zone}"},
       {"name": "VSHOP_DB_HOST", "value": "${rds_db_host}"},
       {"name": "VSHOP_DB_NAME", "value": "${rds_db_name}"},
       {"name": "VSHOP_DB_NAME_PRODUCTION", "value": "${rds_db_name}"},

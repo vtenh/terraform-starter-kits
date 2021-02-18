@@ -27,6 +27,7 @@ resource "aws_route53_record" "www" {
     evaluate_target_health = false
   }
 }
+
 resource "aws_route53_record" "sendgrid" {
   count   = length(var.sendgrid_settings)
   zone_id = data.aws_route53_zone.main.zone_id
@@ -35,4 +36,13 @@ resource "aws_route53_record" "sendgrid" {
   type    = "CNAME"
   ttl     = "5"
   records = [var.sendgrid_settings[count.index].value]
+}
+
+resource "aws_route53_record" "asset_cdn" {
+  count   = var.cdn.sub_domain == "" ? 0 : 1
+  zone_id = data.aws_route53_zone.main.zone_id
+  name    = var.cdn.sub_domain
+  type    = "CNAME"
+  ttl     = "5"
+  records = [var.cdn.cloudfront_domain_name]
 }

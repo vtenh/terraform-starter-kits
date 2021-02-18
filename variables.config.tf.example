@@ -146,6 +146,7 @@ variable "cors_local_sites" {
 
 variable "app_environments" {
   default = {
+    active_storage_cdn = ""
     asset_host_url      = "
     device_secret_key   = ""
     exception_notification_enable = "yes"
@@ -162,6 +163,7 @@ variable "app_environments" {
     smtp_server         = ""
     smtp_username       = ""
     smtp_password       = ""
+    time_zone = "Bangkok"
   }
 }
 
@@ -169,4 +171,11 @@ variable "sendgrid_dns_settings" {
   default = [
     # { name = "", value = "" },
   ]
+}
+
+variable "cdn" {
+  default = {
+    sub_domain = "cdn" # cdn.vtenh.com
+    cloudfront_domain_name = "xxxx.cloudfront.net"
+  }
 }
