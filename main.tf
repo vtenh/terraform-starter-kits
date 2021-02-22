@@ -157,7 +157,6 @@ data "template_file" "ecs_fargate" {
     "log_group_name" = aws_cloudwatch_log_group.fargate.name
   })
 }
-
 module "ecs_fargate_alb" {
   source              = "./modules/ecs_alb"
   name                = local.ecs_fargate_app_name
@@ -203,6 +202,7 @@ module "route53" {
   lb_dns_name       = module.ecs_fargate_alb.lb_dns_name
   lb_zone_id        = module.ecs_fargate_alb.lb_zone_id
   sendgrid_settings = var.sendgrid_dns_settings
+  cdn               = var.cdn
 }
 #===================================== End Fargate ===============================
 
