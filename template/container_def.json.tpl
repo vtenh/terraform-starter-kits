@@ -27,6 +27,7 @@
       {"name": "ASSET_HOST_URL", "value": "${asset_host_url}"},
       {"name": "AWS_BUCKET_NAME", "value": "${bucket_Name}"},
       {"name": "AWS_REGION", "value": "${region}"},
+      {"name": "DEFAULT_EMAIL_FOR_PAYMENT", "value": "${default_email_for_payment}"},
       {"name": "DEVISE_SECRET_KEY", "value": "${device_secret_key}"},
       {"name": "EXCEPTION_NOTIFY_ENABLE", "value": "${exception_notification_enable}"},
       {"name": "EXCEPTION_SLACK_WEBHOOK_URL", "value": "${exception_slack_webhook_url}"},
@@ -55,7 +56,8 @@
       {"name": "VSHOP_DB_NAME", "value": "${rds_db_name}"},
       {"name": "VSHOP_DB_NAME_PRODUCTION", "value": "${rds_db_name}"},
       {"name": "VSHOP_DB_USER", "value": "${rds_db_user}"},
-      {"name": "VSHOP_DB_PASSWORD", "value": "${rds_db_password}"}
+      {"name": "VSHOP_DB_PASSWORD", "value": "${rds_db_password}"},
+      {"name": "TOUCH_REDEPLOY", "value": "${touch_redeploy}"}
     ],
     "logConfiguration": {
       "logDriver": "awslogs",

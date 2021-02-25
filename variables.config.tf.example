@@ -148,6 +148,7 @@ variable "app_environments" {
   default = {
     active_storage_cdn = ""
     asset_host_url      = "
+    default_email_for_payment     = "info+aba@vtenh.com"
     device_secret_key   = ""
     exception_notification_enable = "yes"
     exception_slack_webhook_url   = ""
@@ -164,6 +165,7 @@ variable "app_environments" {
     smtp_username       = ""
     smtp_password       = ""
     time_zone = "Bangkok"
+    touch_redeploy      = "2022-02-22-06:15:00"
   }
 }
 
