@@ -44,6 +44,7 @@
       {"name": "RAILS_MASTER_KEY", "value": "${rails_master_key}"},
       {"name": "RAILS_MIN_INSTANCES", "value": "${rails_min_instances}"},
       {"name": "RAILS_MAX_INSTANCES", "value": "${rails_max_instance}"},
+      {"name": "RAILS_MAX_THREADS", "value": "${rails_max_threads}"},
       {"name": "REDIS_URL", "value": "${redis_url}"},
       {"name": "SIDEKIQ_USERNAME", "value": "${sidekiq_username}"},
       {"name": "SIDEKIQ_PASSWORD", "value": "${sidekiq_password}"},

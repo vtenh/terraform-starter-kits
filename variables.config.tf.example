@@ -164,7 +164,8 @@ variable "app_environments" {
     smtp_server         = ""
     smtp_username       = ""
     smtp_password       = ""
-    time_zone = "Bangkok"
+    time_zone           = "Bangkok"
+    rails_max_threads   = 5
     touch_redeploy      = "2022-02-22-06:15:00"
   }
 }
