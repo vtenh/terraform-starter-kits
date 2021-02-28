@@ -154,6 +154,7 @@ variable "app_environments" {
     exception_slack_webhook_url   = ""
     exception_channel_id          = ""
     firebase_project_id = ""
+    google_tag_manager  = "GTM-"
     host                = "
     rails_master_key    = ""
     rails_min_instances = 4
