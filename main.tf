@@ -112,7 +112,7 @@ module "iam_ecs" {
 #     "container_name" = local.ecs_ec2_app_name
 #     "log_group_name" = aws_cloudwatch_log_group.ec2.name
 #   })
-# }
+# } 
 
 # module "ecs_ec2" {
 #   source                = "./modules/ecs_ec2"
