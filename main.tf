@@ -95,7 +95,7 @@ module "iam_ecs" {
   name   = lower(var.name)
 }
 
-################################## ECS EC2 ######################################
+################################ ECS EC2 ######################################
 
 # resource "aws_cloudwatch_log_group" "ec2" {
 #   name_prefix       = "/ecs/vtenh-ec2"
@@ -112,7 +112,7 @@ module "iam_ecs" {
 #     "container_name" = local.ecs_ec2_app_name
 #     "log_group_name" = aws_cloudwatch_log_group.ec2.name
 #   })
-# } 
+# }
 
 # module "ecs_ec2" {
 #   source                = "./modules/ecs_ec2"
@@ -176,7 +176,7 @@ module "ecs_fargate" {
   container_definitions = data.template_file.ecs_fargate.rendered
   task_role_arn         = module.iam_ecs.task_role_arn
   execution_role_arn    = module.iam_ecs.execution_role_arn
-  desired_count         = var.desired_count
+  desired_count         = 2 # var.desired_count
   security_group_ids    = [module.sg.ecs.id]
   subnet_ids            = module.vpc.public_subnet_ids
 
@@ -190,8 +190,8 @@ module "ecs_fargate_auto_scaling" {
   source       = "./modules/ecs_auto_scaling"
   cluster_name = module.ecs_fargate.cluster_name
   service_name = module.ecs_fargate.service_name
-  max_count    = var.max_count
-  min_count    = var.min_count
+  max_count    = 4 #var.max_count
+  min_count    = 2 #var.min_count
   metric_type  = "CPU"
 }
 
