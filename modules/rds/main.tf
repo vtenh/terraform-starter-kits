@@ -25,7 +25,7 @@ resource "aws_db_instance" "postgresql" {
   allocated_storage = 20
   storage_type      = "gp2"
   engine            = "postgres"
-  engine_version    = local.postgresql_engine_version
+  engine_version    = "12.5"
   instance_class    = var.postgresql_engine_class
   storage_encrypted = false
 

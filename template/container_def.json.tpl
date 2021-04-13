@@ -34,6 +34,8 @@
       {"name": "EXCEPTION_CHANNEL_ID", "value": "${exception_channel_id}"},
       {"name": "FIREBASE_PROJECT_ID", "value": "${firebase_project_id}"},
       {"name": "DEFAULT_URL_HOST", "value": "${host}"},
+      {"name": "GOOGLE_TAG_MANAGER", "value": "${google_tag_manager}"},
+
       {"name": "MEMCACHE_SERVERS", "value": "${memcached_servers}"},
       {"name": "MODE_ENV", "value": "${app_mode}"},
       {"name": "RAILS_TASK_NAME", "value": "${rails_task_name}"},
