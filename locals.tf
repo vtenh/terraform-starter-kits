@@ -20,7 +20,7 @@ locals {
 
 
   container_template_vars = merge(var.app_environments, {
-    app_name       = "VTenh"
+    app_name       = "VTENH"
     bucket_Name    = var.s3_storage.bucket_name
     container_port = var.container_port
     custom_command = ""
