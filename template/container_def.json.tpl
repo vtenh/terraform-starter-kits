@@ -50,6 +50,7 @@
       {"name": "RAILS_MAX_INSTANCES", "value": "${rails_max_instance}"},
       {"name": "RAILS_MAX_THREADS", "value": "${rails_max_threads}"},
       {"name": "REDIS_URL", "value": "${redis_url}"},
+      {"name": "SHOW_TOPBAR", "value": "${show_topbar}"},
       {"name": "SIDEKIQ_USERNAME", "value": "${sidekiq_username}"},
       {"name": "SIDEKIQ_PASSWORD", "value": "${sidekiq_password}"},
       {"name": "SMS_SENDER_ID", "value": "${sms_sender_id}"},

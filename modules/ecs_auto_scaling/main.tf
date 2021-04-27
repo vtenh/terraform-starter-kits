@@ -96,10 +96,10 @@ resource "aws_cloudwatch_metric_alarm" "cpu_high" {
   count               = var.metric_type == "CPU" ? 1 : 0
   alarm_name          = "${var.cluster_name}-High CPU"
   comparison_operator = "GreaterThanOrEqualToThreshold"
-  evaluation_periods  = "2"
+  evaluation_periods  = "1"
   metric_name         = "CPUUtilization"
   namespace           = "AWS/ECS"
-  period              = "300"
+  period              = "60"
   statistic           = "Average"
   threshold           = 80
 
@@ -117,7 +117,7 @@ resource "aws_cloudwatch_metric_alarm" "cpu_low" {
   count               = var.metric_type == "CPU" ? 1 : 0
   alarm_name          = "${var.cluster_name}-Low CPU"
   comparison_operator = "LessThanOrEqualToThreshold"
-  evaluation_periods  = "2"
+  evaluation_periods  = "1"
   metric_name         = "CPUUtilization"
   namespace           = "AWS/ECS"
   period              = "300"
