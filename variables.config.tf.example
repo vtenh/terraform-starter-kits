@@ -161,6 +161,7 @@ variable "app_environments" {
     rails_master_key    = ""
     rails_min_instances = 4
     rails_max_instance  = 6
+    show_topbar         = "yes"
     sidekiq_username    = ""
     sidekiq_password    = ""
     sms_sender_id       = ""
@@ -169,7 +170,7 @@ variable "app_environments" {
     smtp_password       = ""
     time_zone           = "Bangkok"
     rails_max_threads   = 5
-    touch_redeploy      = "2022-02-22-06:15:00"
+    touch_redeploy      = "2022-02-26-19:30:00"
   }
 }
 

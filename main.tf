@@ -190,7 +190,7 @@ module "ecs_fargate_auto_scaling" {
   source       = "./modules/ecs_auto_scaling"
   cluster_name = module.ecs_fargate.cluster_name
   service_name = module.ecs_fargate.service_name
-  max_count    = 4 #var.max_count
+  max_count    = 8 #var.max_count
   min_count    = 2 #var.min_count
   metric_type  = "CPU"
 }
