@@ -9,3 +9,7 @@ output "postgresql_engine_versions" {
 output "postgresql_engine_version" {
   value = local.postgresql_engine_version
 }
+
+output "postgresql_master_identifier" {
+  value = aws_db_instance.postgresql.identifier
+}

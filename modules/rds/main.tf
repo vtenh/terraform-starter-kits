@@ -22,12 +22,15 @@ resource "aws_kms_key" "insight_key" {
 
 resource "aws_db_instance" "postgresql" {
   identifier        = "${var.identifier}-postgresql"
-  allocated_storage = 20
-  storage_type      = "gp2"
-  engine            = "postgres"
-  engine_version    = "12.5"
-  instance_class    = var.postgresql_engine_class
-  storage_encrypted = false
+
+  storage_type   = "gp2"
+  allocated_storage = var.allocated_storage
+  max_allocated_storage = var.max_allocated_storage
+  storage_encrypted     = false
+
+  engine         = var.engine
+  engine_version = var.engine_version
+  instance_class = var.postgresql_engine_class
 
   multi_az = true
 
@@ -50,6 +53,36 @@ resource "aws_db_instance" "postgresql" {
 
   final_snapshot_identifier = "${var.identifier}-postgresql"
   skip_final_snapshot       = false
-  # Storage auto scaling
-  max_allocated_storage = 200
+
+}
+
+resource "aws_db_instance" "postgresql_replica" {
+  count      = length(var.replica_ids)
+  identifier = "${var.identifier}-postgresql-${var.replica_ids[count.index]}"
+
+  storage_type   = "gp2"
+  allocated_storage     = var.allocated_storage
+  max_allocated_storage = var.max_allocated_storage
+  storage_encrypted     = false
+
+  # Source database. For cross-region use db_instance_arn
+  replicate_source_db = aws_db_instance.postgresql.identifier
+  engine              = var.engine
+  engine_version      = var.engine_version
+
+  instance_class = var.replica_postgresql_engine_class
+
+  multi_az               = true
+
+  deletion_protection  = false
+
+  enabled_cloudwatch_logs_exports = ["postgresql"]
+
+  performance_insights_kms_key_id       = aws_kms_key.insight_key.arn
+  performance_insights_enabled          = true
+  performance_insights_retention_period = 7
+
+  vpc_security_group_ids = var.replica_security_group_ids
+  publicly_accessible = false
+
 }

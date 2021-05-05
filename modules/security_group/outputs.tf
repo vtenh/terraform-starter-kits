@@ -14,6 +14,10 @@ output "postgresql" {
   value = aws_security_group.postgresql
 }
 
+output "postgresql_replica" {
+  value = aws_security_group.postgresql_replica
+}
+
 output "redis" {
   value = aws_security_group.redis
 }
