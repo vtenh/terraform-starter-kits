@@ -13,5 +13,23 @@ terraform apply
 terraform output
 ```
 
+## SHORT HANDED ALIAS
+For convenience, we use the following alias
+
+```
+alias "tfi"="terrform init"
+alias "tfp"="terraform plan"
+alias "tfa"="terraform apply"
+alias "tfo"="terraform output"
+```
+
+## DETACHED STATE
+The following have been removed from state management in terraform
+
+```
+tfs rm module.sg.aws_security_group.quicksight
+tfs rm module.sg.aws_security_group.postgresql_replica
+```
+
 ## CONSTRIBUTION
-PRs are more than welcome. 
+PRs are more than welcome.
