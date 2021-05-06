@@ -46,3 +46,11 @@ resource "aws_route53_record" "asset_cdn" {
   ttl     = "5"
   records = [var.cdn.cloudfront_domain_name]
 }
+
+resource "aws_route53_record" "firebase_verification" {
+  zone_id = data.aws_route53_zone.main.zone_id
+  name    = "_acme-challenge"
+  type    = "TXT"
+
+  records = [ "QyqohHHOMZGbKVeS_D_PTKDP8uo8lsijzxEwxa85KR0" ]
+}
