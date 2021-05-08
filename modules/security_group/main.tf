@@ -137,76 +137,76 @@ resource "aws_security_group" "postgresql" {
 # -------------------------------------------------------------------------------------------------
 # All TCP           TCP             0 - 65535           sg-123345678f        QuickSight security group
 
-resource "aws_security_group" "quicksight" {
-  vpc_id      = var.vpc_id
-  name_prefix = "AWS Quicksight"
-  description = "Allow postgresql to be accessed by Quicksight"
+# resource "aws_security_group" "quicksight" {
+#   vpc_id      = var.vpc_id
+#   name_prefix = "AWS Quicksight"
+#   description = "Allow postgresql to be accessed by Quicksight"
 
-  ingress {
-    cidr_blocks      = ["0.0.0.0/0"]
-    description      = "Quicksight Singapore: ap-southeast-1"
-    from_port        = 0
-    protocol         = "-1"
-    to_port          = 0
-    # manually link this to avoid cycle dependency
-    # security_groups  = [aws_security_group.postgresql_replica.id]
-    ipv6_cidr_blocks = []
-    prefix_list_ids  = []
-    self             = false
-  }
+#   ingress {
+#     cidr_blocks      = ["0.0.0.0/0"]
+#     description      = "Quicksight Singapore: ap-southeast-1"
+#     from_port        = 0
+#     protocol         = "-1"
+#     to_port          = 0
+#     # manually link this to avoid cycle dependency
+#     # security_groups  = [aws_security_group.postgresql_replica.id]
+#     ipv6_cidr_blocks = []
+#     prefix_list_ids  = []
+#     self             = false
+#   }
 
-  egress {
-    cidr_blocks      = ["0.0.0.0/0"]
-    description      = ""
-    from_port        = 5432
-    ipv6_cidr_blocks = []
-    prefix_list_ids  = []
-    protocol         = "tcp"
-    # manually link this to avoid cycle dependency
-    # security_groups  = [ aws_security_group.postgresql_replica.id]
-    self             = false
-    to_port          = 5432
-  }
+#   egress {
+#     cidr_blocks      = ["0.0.0.0/0"]
+#     description      = ""
+#     from_port        = 5432
+#     ipv6_cidr_blocks = []
+#     prefix_list_ids  = []
+#     protocol         = "tcp"
+#     # manually link this to avoid cycle dependency
+#     # security_groups  = [ aws_security_group.postgresql_replica.id]
+#     self             = false
+#     to_port          = 5432
+#   }
 
 
-  tags = {
-    "Name" = "RDS Quicksight"
-  }
-}
+#   tags = {
+#     "Name" = "RDS Quicksight"
+#   }
+# }
 
-resource "aws_security_group" "postgresql_replica" {
-  vpc_id      = var.vpc_id
-  name_prefix = "RDS Replica"
-  description = "Allow to connect to RDS from bashion, webserver and quicksight to connect to"
+# resource "aws_security_group" "postgresql_replica" {
+#   vpc_id      = var.vpc_id
+#   name_prefix = "RDS Replica"
+#   description = "Allow to connect to RDS from bashion, webserver and quicksight to connect to"
 
-  ingress {
-    cidr_blocks      = ["0.0.0.0/0"] #allow for quicksight and  + vpc
-    description      = "Access from bashion host, webserver and quicksight"
-    from_port        = 5432
-    protocol         = "tcp"
-    security_groups  = local.allow_from_web_bastion_and_qs_sgs
-    to_port          = 5432
-    ipv6_cidr_blocks = []
-    prefix_list_ids  = []
-    self             = false
-  }
+#   ingress {
+#     cidr_blocks      = ["0.0.0.0/0"] #allow for quicksight and  + vpc
+#     description      = "Access from bashion host, webserver and quicksight"
+#     from_port        = 5432
+#     protocol         = "tcp"
+#     security_groups  = local.allow_from_web_bastion_and_qs_sgs
+#     to_port          = 5432
+#     ipv6_cidr_blocks = []
+#     prefix_list_ids  = []
+#     self             = false
+#   }
 
-  egress {
-    cidr_blocks      = ["0.0.0.0/0"]
-    description      = ""
-    from_port        = 0
-    ipv6_cidr_blocks = []
-    prefix_list_ids  = []
-    protocol         = "-1"
-    security_groups  = [aws_security_group.quicksight.id]
-    self             = false
-    to_port          = 0
-  }
+#   egress {
+#     cidr_blocks      = ["0.0.0.0/0"]
+#     description      = ""
+#     from_port        = 0
+#     ipv6_cidr_blocks = []
+#     prefix_list_ids  = []
+#     protocol         = "-1"
+#     security_groups  = [aws_security_group.quicksight.id]
+#     self             = false
+#     to_port          = 0
+#   }
 
-  tags = {
-    "Name" = "RDS Replica"
-  }
-}
+#   tags = {
+#     "Name" = "RDS Replica"
+#   }
+# }
 
 ############################ REDIS
 resource "aws_security_group" "redis" {

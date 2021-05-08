@@ -51,6 +51,7 @@ resource "aws_route53_record" "firebase_verification" {
   zone_id = data.aws_route53_zone.main.zone_id
   name    = "_acme-challenge"
   type    = "TXT"
+  ttl     = "5"
 
-  records = [ "QyqohHHOMZGbKVeS_D_PTKDP8uo8lsijzxEwxa85KR0" ]
+  records = ["QyqohHHOMZGbKVeS_D_PTKDP8uo8lsijzxEwxa85KR0"]
 }

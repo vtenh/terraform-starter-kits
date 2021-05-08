@@ -10,6 +10,7 @@ variable "security_group_ids" {
 variable "replica_security_group_ids" {
   description = "replica_security_group_ids"
   type        = list(string)
+  default     = []
 }
 
 variable "identifier" {
