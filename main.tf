@@ -25,7 +25,7 @@ module "rds" {
   postgresql_db_password    = var.rds.postgresql.db_password
   subnet_ids                = module.vpc.private_subnet_ids
   security_group_ids        = [module.sg.postgresql.id]
-  replica_security_group_ids     = [ module.sg.postgresql_replica.id ]
+  # replica_security_group_ids = [module.sg.postgresql_replica.id]
   replica_ids = ["data"]
 }
 
