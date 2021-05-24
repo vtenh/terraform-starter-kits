@@ -12,6 +12,7 @@ locals {
   ecs_fargate_app_name     = "${var.name}-fargate"
   ecs_fargate_cron         = "${var.name}-cron"
   ecs_fargate_db_migration = "${var.name}-db-migration"
+  ecs_fargate_task         = "${var.name}-ecs-task"
   ecs_queue_name           = "${var.name}-queue"
 
   docker_image_url   = aws_ecr_repository.main.repository_url

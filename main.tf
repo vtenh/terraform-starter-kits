@@ -313,8 +313,41 @@ module "ecs_scheduele_cron" {
   max_capacity       = 0
 }
 #=============================== End CRON ======================================
+resource "aws_cloudwatch_log_group" "ecs_task" {
+  name_prefix       = "/ecs/ecs-task"
+  retention_in_days = 7
 
+  tags = {
+    "ecs_schedule_task_log" = "ecs-task"
+  }
+}
+# task: "vshop:product_reindex"
+data "template_file" "product_reindex" {
+  template = file("template/container_def.json.tpl")
 
+  # custom command with sitemap
+  vars = merge(local.scheduled_task_container_template_vars, {
+    "rails_task_name" = "vshop:product_reindex"
+    "container_name"  = local.ecs_fargate_task
+    "log_group_name"  = aws_cloudwatch_log_group.ecs_task.name
+  })
+}
+
+module "ecs_task_product_reindex" {
+  source             = "./modules/ecs_run_task"
+  cluster_name       = local.ecs_fargate_task
+  is_scheduled_task  = false
+  execution_role_arn = module.iam_ecs.execution_role_arn
+  task_role_arn      = module.iam_ecs.task_role_arn
+  cpu                = var.task_cpu
+  memory             = var.task_memory
+  security_group_ids = [module.sg.ecs.id]
+  subnet_ids         = module.vpc.private_subnet_ids
+  is_public_subnet   = false
+  desired_count      = 0
+  min_capacity       = 0
+  max_capacity       = 0
+}
 
 ############################ Run Migration One off task #############################
 resource "aws_cloudwatch_log_group" "migration" {
