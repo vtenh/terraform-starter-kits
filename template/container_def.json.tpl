@@ -35,6 +35,9 @@
       {"name": "EXCEPTION_CHANNEL_ID", "value": "${exception_channel_id}"},
       {"name": "FB_APP_ID", "value": "${fb_app_id}"},
       {"name": "FIREBASE_PROJECT_ID", "value": "${firebase_project_id}"},
+      {"name": "FIREBASE_SERVER_KEY", "value": "${firebase_server_key}"},
+      {"name": "FORCE_SSL", "value": "true"},
+
       {"name": "DEFAULT_URL_HOST", "value": "${host}"},
       {"name": "GOOGLE_TAG_MANAGER", "value": "${google_tag_manager}"},
 

@@ -155,6 +155,7 @@ variable "app_environments" {
     exception_slack_webhook_url   = ""
     exception_channel_id          = ""
     fb_app_id                     = "381496249527504"
+    firebase_server_key           = ""
     firebase_project_id = ""
     google_tag_manager  = "GTM-"
     host                = "
