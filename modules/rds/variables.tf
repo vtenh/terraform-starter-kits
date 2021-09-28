@@ -31,7 +31,7 @@ variable "postgresql_db_password" {
 
 variable "postgresql_engine_version" {
   description = "Engine version, default to the latest version"
-  default     = ""
+  default     = "12.7"
 }
 
 variable "postgresql_engine_class" {
@@ -46,7 +46,7 @@ variable "engine" {
   default = "postgres"
 }
 variable "engine_version" {
-  default = "12.5"
+  default = "12.7"
 }
 
 variable "replica_ids" {
