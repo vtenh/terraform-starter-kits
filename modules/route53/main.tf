@@ -55,3 +55,16 @@ resource "aws_route53_record" "firebase_verification" {
 
   records = ["QyqohHHOMZGbKVeS_D_PTKDP8uo8lsijzxEwxa85KR0"]
 }
+
+# https://business.facebook.com/settings/owned-domains/649175642713187?business_id=235626258081882
+resource "aws_route53_record" "txt_domain_verification" {
+  zone_id = data.aws_route53_zone.main.zone_id
+  name    = "vtenh.com"
+  type    = "TXT"
+  ttl     = "5"
+
+  records = [
+    "google-site-verification=wnYgMaCTDE3nQBaGLAAaF-Icd8fZ_78-IizzuSnHZGA",
+    "facebook-domain-verification=lblw55yg9rjb6fw83w6txvwjxicj6z"
+  ]
+}
