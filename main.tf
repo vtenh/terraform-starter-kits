@@ -116,6 +116,7 @@ module "iam_ecs" {
 #   })
 # }
 
+# # ssh ec2-user@ip_address
 # module "ecs_ec2" {
 #   source                = "./modules/ecs_ec2"
 #   name                  = local.ecs_ec2_app_name
