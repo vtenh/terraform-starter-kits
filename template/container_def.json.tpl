@@ -22,9 +22,16 @@
       }
     ],
     "environment": [
+
       {"name": "ACTIVE_STORAGE_CDN", "value": "${active_storage_cdn}"},
       {"name": "APP_NAME", "value": "${app_name}"},
+
       {"name": "ASSET_HOST_URL", "value": "${asset_host_url}"},
+
+      {"name": "ANDROID_APP_NAME", "value": "${android_app_name}"},
+      {"name": "ANDROID_PACKAGE", "value": "${android_package}"},
+
+
       {"name": "AWS_BUCKET_NAME", "value": "${bucket_Name}"},
       {"name": "AWS_REGION", "value": "${region}"},
 
@@ -37,7 +44,10 @@
       {"name": "EXCEPTION_NOTIFY_ENABLE", "value": "${exception_notification_enable}"},
       {"name": "EXCEPTION_SLACK_WEBHOOK_URL", "value": "${exception_slack_webhook_url}"},
       {"name": "EXCEPTION_CHANNEL_ID", "value": "${exception_channel_id}"},
+
       {"name": "FB_APP_ID", "value": "${fb_app_id}"},
+      {"name": "FB_PAGE_ID", "value": "${fb_page_id}"},
+
       {"name": "FIREBASE_PROJECT_ID", "value": "${firebase_project_id}"},
       {"name": "FIREBASE_SENDER_ID", "value": "${firebase_sender_id}"},
       {"name": "FIREBASE_SERVER_KEY", "value": "${firebase_server_key}"},
@@ -45,6 +55,11 @@
 
       {"name": "DEFAULT_URL_HOST", "value": "${host}"},
       {"name": "GOOGLE_TAG_MANAGER", "value": "${google_tag_manager}"},
+
+
+      {"name": "IOS_APP_NAME", "value": "${ios_app_name}"},
+      {"name": "IOS_APP_STORE_ID", "value": "${ios_app_store_id}"},
+
 
       {"name": "MEMCACHE_SERVERS", "value": "${memcached_servers}"},
       {"name": "MODE_ENV", "value": "${app_mode}"},
