@@ -146,6 +146,7 @@ variable "cors_local_sites" {
 
 variable "app_environments" {
   default = {
+    appsignal_key      = ""
     active_storage_cdn = ""
 
     android_app_name              = "VTenh"

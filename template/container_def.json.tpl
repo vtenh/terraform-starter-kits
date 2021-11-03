@@ -23,6 +23,7 @@
     ],
     "environment": [
 
+      {"name": "APPSIGNAL_PUSH_API_KEY", "value": "${appsignal_key}"},
       {"name": "ACTIVE_STORAGE_CDN", "value": "${active_storage_cdn}"},
       {"name": "APP_NAME", "value": "${app_name}"},
 
