@@ -59,7 +59,7 @@ locals {
     app_mode          = "queue"
     container_cpu     = var.queue_cpu
     container_memory  = var.queue_memory
-    rails_max_threads = 25
+    rails_max_threads = 10
   })
 
   scheduled_task_container_template_vars = merge(local.container_template_vars, {
