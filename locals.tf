@@ -19,12 +19,14 @@ locals {
   memcached_endpoint = module.memcached.configuration_endpoint
   redis_url          = "redis://${module.redis.cluster_address}:${module.redis.cluster_port}/1"
 
+  rds_replica_address = var.rds_replica_address == "" ? module.rds.postgresql_address : var.rds_replica_address
 
   container_template_vars = merge(var.app_environments, {
     app_name = "VTENH"
 
     # "postgres://avocado:123456@localhost:5432/vtenh"
-    blazer_database_url      = "postgres://${var.rds.postgresql.db_username}:${var.rds.postgresql.db_password}@${module.rds.postgresql_address}:5432/${var.rds.postgresql.db_name}"
+    # blazer_database_url      = "postgres://${var.rds.postgresql.db_username}:${var.rds.postgresql.db_password}@${module.rds.postgresql_address}:5432/${var.rds.postgresql.db_name}"
+    blazer_database_url      = "postgres://${var.rds.postgresql.db_username}:${var.rds.postgresql.db_password}@${local.rds_replica_address}:5432/${var.rds.postgresql.db_name}"
     blazer_slack_webhook_url = var.app_environments.exception_slack_webhook_url
 
     bucket_Name    = var.s3_storage.bucket_name
