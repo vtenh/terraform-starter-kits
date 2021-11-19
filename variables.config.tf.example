@@ -29,6 +29,12 @@ variable "rds" {
   }
 }
 
+variable "rds_replica_address" {
+  description = "rds replica database address used to connect BI tool. If empty then the master address will be used"
+  type        = string
+  default     = ""
+}
+
 variable "s3_storage" {
   default = {
     bucket_name = "vtenh"
