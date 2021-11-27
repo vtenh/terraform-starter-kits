@@ -159,6 +159,13 @@ variable "app_environments" {
     android_package                = "com.vtenh.app.store"
 
     asset_host_url      = "
+
+    aws_root_arn                          = ""
+    aws_recom_dataset_group_arn           = ""
+    aws_user_personalization_campaign_arn = ""
+    aws_related_product_campaign_arn      = ""
+
+
     default_email_for_payment     = "info+aba@vtenh.com"
     device_secret_key   = ""
     exception_notification_enable = "yes"

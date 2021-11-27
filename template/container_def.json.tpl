@@ -36,6 +36,11 @@
       {"name": "AWS_BUCKET_NAME", "value": "${bucket_Name}"},
       {"name": "AWS_REGION", "value": "${region}"},
 
+      {"name": "AWS_ROOT_ARN", "value": "${aws_root_arn}"},
+      {"name": "AWS_RECOM_DATASET_GROUP_ARN", "value": "${aws_recom_dataset_group_arn}"},
+      {"name": "AWS_USER_PERSONALIZATION_CAMPAIGN_ARN", "value": "${aws_user_personalization_campaign_arn}"},
+      {"name": "AWS_RELATED_PRODUCT_CAMPAIGN_ARN", "value": "${aws_related_product_campaign_arn}"},
+
       {"name": "BLAZER_DATABASE_URL", "value": "${blazer_database_url}"},
       {"name": "BLAZER_SLACK_WEBHOOK_URL", "value": "${blazer_slack_webhook_url}"},
 
