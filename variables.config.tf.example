@@ -161,10 +161,13 @@ variable "app_environments" {
     asset_host_url      = "
 
     aws_root_arn                          = ""
-    aws_recom_dataset_group_arn           = ""
-    aws_user_personalization_campaign_arn = ""
-    aws_related_product_campaign_arn      = ""
-
+    aws_dataset_group_arn                 = ":dataset-group/vtenh-ml-production-dsg"
+    aws_item_dataset_arn                  = ":dataset/vtenh-ml-production-dsg/ITEMS"
+    aws_user_dataset_arn                  = ":dataset/vtenh-ml-production-dsg/USERS"
+    aws_user_personalization_campaign_arn = ":campaign/user-personalization"
+    aws_related_product_campaign_arn      = ":campaign/people_also"
+    aws_people_also_campaign_arn          = ":campaign/people_also"
+    aws_user_interactions_count           = 6
 
     default_email_for_payment     = "info+aba@vtenh.com"
     device_secret_key   = ""
@@ -198,6 +201,8 @@ variable "app_environments" {
     time_zone           = "Bangkok"
     rails_max_threads   = 5
     touch_redeploy      = "2022-02-26-19:30:00"
+    webhook_token       = ""
+
   }
 }
 

@@ -37,9 +37,13 @@
       {"name": "AWS_REGION", "value": "${region}"},
 
       {"name": "AWS_ROOT_ARN", "value": "${aws_root_arn}"},
-      {"name": "AWS_RECOM_DATASET_GROUP_ARN", "value": "${aws_recom_dataset_group_arn}"},
+      {"name": "AWS_DATASET_GROUP_ARN", "value": "${aws_dataset_group_arn}"},
+      {"name": "AWS_ITEM_DATASET_ARN", "value": "${aws_item_dataset_arn}"},
+      {"name": "AWS_USER_DATASET_ARN", "value": "${aws_user_dataset_arn}"},
       {"name": "AWS_USER_PERSONALIZATION_CAMPAIGN_ARN", "value": "${aws_user_personalization_campaign_arn}"},
       {"name": "AWS_RELATED_PRODUCT_CAMPAIGN_ARN", "value": "${aws_related_product_campaign_arn}"},
+      {"name": "AWS_PEOPLE_ALSO_CAMPAIGN_ARN", "value": "${aws_people_also_campaign_arn}"},
+      {"name": "AWS_USER_INTERACTIONS_COUNT", "value": "${aws_user_interactions_count}"},
 
       {"name": "BLAZER_DATABASE_URL", "value": "${blazer_database_url}"},
       {"name": "BLAZER_SLACK_WEBHOOK_URL", "value": "${blazer_slack_webhook_url}"},
@@ -92,6 +96,7 @@
       {"name": "VSHOP_DB_NAME_PRODUCTION", "value": "${rds_db_name}"},
       {"name": "VSHOP_DB_USER", "value": "${rds_db_user}"},
       {"name": "VSHOP_DB_PASSWORD", "value": "${rds_db_password}"},
+      {"name": "WEBHOOK_TOKEN", "value": "${webhook_token}"},
       {"name": "TOUCH_REDEPLOY", "value": "${touch_redeploy}"}
     ],
     "logConfiguration": {
