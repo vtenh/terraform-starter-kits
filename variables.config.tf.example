@@ -167,7 +167,14 @@ variable "app_environments" {
     aws_user_personalization_campaign_arn = ":campaign/user-personalization"
     aws_related_product_campaign_arn      = ":campaign/people_also"
     aws_people_also_campaign_arn          = ":campaign/people_also"
+    aws_reranking_campaign_arn            = ":campaign/search_rerank"
+
     aws_user_interactions_count           = 6
+
+    aws_user_personalization_solution_arn = ":solution/user-personalization"
+    aws_related_product_solution_arn      = ":solution/people_also"
+    aws_reranking_solution_arn            = ":solution/search_rerank"
+
 
     default_email_for_payment     = "info+aba@vtenh.com"
     device_secret_key   = ""
@@ -191,6 +198,7 @@ variable "app_environments" {
     rails_master_key    = ""
     rails_min_instances = 4
     rails_max_instance  = 6
+    search_rerank       = "yes"
     show_topbar         = "yes"
     sidekiq_username    = ""
     sidekiq_password    = ""

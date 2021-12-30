@@ -43,7 +43,14 @@
       {"name": "AWS_USER_PERSONALIZATION_CAMPAIGN_ARN", "value": "${aws_user_personalization_campaign_arn}"},
       {"name": "AWS_RELATED_PRODUCT_CAMPAIGN_ARN", "value": "${aws_related_product_campaign_arn}"},
       {"name": "AWS_PEOPLE_ALSO_CAMPAIGN_ARN", "value": "${aws_people_also_campaign_arn}"},
+      {"name": "AWS_RERANKING_CAMPAIGN_ARN", "value": "${aws_reranking_campaign_arn}"},
+
+
       {"name": "AWS_USER_INTERACTIONS_COUNT", "value": "${aws_user_interactions_count}"},
+
+      {"name": "AWS_USER_PERSONALIZATION_SOLUTION_ARN", "value": "${aws_user_personalization_solution_arn}"},
+      {"name": "AWS_RELATED_PRODUCT_SOLUTION_ARN", "value": "${aws_related_product_solution_arn}"},
+      {"name": "AWS_RERANKING_SOLUTION_ARN", "value": "${aws_reranking_solution_arn}"},
 
       {"name": "BLAZER_DATABASE_URL", "value": "${blazer_database_url}"},
       {"name": "BLAZER_SLACK_WEBHOOK_URL", "value": "${blazer_slack_webhook_url}"},
@@ -83,6 +90,7 @@
       {"name": "RAILS_MAX_INSTANCES", "value": "${rails_max_instance}"},
       {"name": "RAILS_MAX_THREADS", "value": "${rails_max_threads}"},
       {"name": "REDIS_URL", "value": "${redis_url}"},
+      {"name": "SEARCH_RERANK", "value": "${search_rerank}"},
       {"name": "SHOW_TOPBAR", "value": "${show_topbar}"},
       {"name": "SIDEKIQ_USERNAME", "value": "${sidekiq_username}"},
       {"name": "SIDEKIQ_PASSWORD", "value": "${sidekiq_password}"},
