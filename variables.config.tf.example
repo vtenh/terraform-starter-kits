@@ -169,7 +169,8 @@ variable "app_environments" {
     aws_people_also_campaign_arn          = ":campaign/people_also"
     aws_reranking_campaign_arn            = ":campaign/search_rerank"
 
-    aws_user_interactions_count           = 6
+    aws_event_exclude_from_cart_details   = "View,Click"
+    aws_user_interactions_count           = 100
 
     aws_user_personalization_solution_arn = ":solution/user-personalization"
     aws_related_product_solution_arn      = ":solution/people_also"
@@ -208,7 +209,7 @@ variable "app_environments" {
     smtp_username       = ""
     smtp_password       = ""
     time_zone           = "Bangkok"
-    touch_redeploy      = "2022-02-26-19:30:00"
+    touch_redeploy      = "2022-01-05-09:30:00"
     webhook_token       = ""
 
   }
