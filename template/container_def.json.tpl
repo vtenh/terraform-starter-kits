@@ -51,6 +51,7 @@
       {"name": "AWS_RERANKING_CAMPAIGN_ARN", "value": "${aws_reranking_campaign_arn}"},
 
 
+      {"name": "AWS_EVENT_EXCLUDE_FROM_PRODUCT_DETAILS", "value": "${aws_event_exclude_from_product_details}"},
       {"name": "AWS_EVENT_EXCLUDE_FROM_CART_DETAILS", "value": "${aws_event_exclude_from_cart_details}"},
       {"name": "AWS_USER_INTERACTIONS_COUNT", "value": "${aws_user_interactions_count}"},
 
