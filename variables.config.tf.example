@@ -114,6 +114,14 @@ variable "queue_desired_count" {
   default = 1
 }
 
+variable "web_rails_max_threads" {
+  default = 5
+}
+
+variable "queue_rails_max_threads" {
+  default = 10
+}
+
 variable "health_check_path" {
   default = "/health_check"
 }
@@ -152,6 +160,9 @@ variable "cors_local_sites" {
 
 variable "app_environments" {
   default = {
+    acleda_check_status_path = "/VETDIGITAL/XPAYConnectorServiceInterfaceImplV2/XPAYConnectorServiceInterfaceImplV2RS/getTxnStatus"
+    acleda_create_session_path = "/VETDIGITAL/XPAYConnectorServiceInterfaceImplV2/XPAYConnectorServiceInterfaceImplV2RS/openSessionV2"
+
     appsignal_key      = ""
     active_storage_cdn = ""
 
