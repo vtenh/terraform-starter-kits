@@ -25,6 +25,9 @@
     ],
     "environment": [
 
+      {"name": "ACLEDA_CHECK_STATUS_PATH", "value": "${acleda_check_status_path}"},
+      {"name": "ACLEDA_CREATE_SESSION_PATH", "value": "${acleda_create_session_path}"},
+
       {"name": "APPSIGNAL_PUSH_API_KEY", "value": "${appsignal_key}"},
       {"name": "ACTIVE_STORAGE_CDN", "value": "${active_storage_cdn}"},
       {"name": "APP_NAME", "value": "${app_name}"},

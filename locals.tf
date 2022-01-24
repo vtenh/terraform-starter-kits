@@ -51,9 +51,10 @@ locals {
   })
 
   web_container_template_vars = merge(local.container_template_vars, {
-    app_mode         = "web"
-    container_cpu    = var.web_cpu
-    container_memory = var.web_memory
+    app_mode          = "web"
+    container_cpu     = var.web_cpu
+    container_memory  = var.web_memory
+    rails_max_threads = var.web_rails_max_threads
   })
 
   # override app_mode, queue_cpu, queue_memory, db conpool rails_max_threads
@@ -61,7 +62,7 @@ locals {
     app_mode          = "queue"
     container_cpu     = var.queue_cpu
     container_memory  = var.queue_memory
-    rails_max_threads = 10
+    rails_max_threads = var.queue_rails_max_threads
   })
 
   scheduled_task_container_template_vars = merge(local.container_template_vars, {
