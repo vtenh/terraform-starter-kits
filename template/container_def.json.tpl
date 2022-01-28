@@ -106,6 +106,7 @@
       {"name": "SMTP_USERNAME", "value": "${smtp_username}"},
       {"name": "SMTP_PASSWORD", "value": "${smtp_password}"},
       {"name": "TIME_ZONE", "value": "${time_zone}"},
+      {"name": "VDEUK_SECRET_KEY", "value": "${vdeuk_secret_key}"},
       {"name": "VSHOP_DB_HOST", "value": "${rds_db_host}"},
       {"name": "VSHOP_DB_NAME", "value": "${rds_db_name}"},
       {"name": "VSHOP_DB_NAME_PRODUCTION", "value": "${rds_db_name}"},
