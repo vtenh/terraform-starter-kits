@@ -221,6 +221,7 @@ variable "app_environments" {
     smtp_password       = ""
     time_zone           = "Bangkok"
     touch_redeploy      = "2022-01-05-09:30:00"
+    vdeuk_secret_key    = ""
     webhook_token       = ""
 
   }
