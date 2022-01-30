@@ -3,7 +3,7 @@
   "Statement": [
     {
       "Effect": "Allow",
-        "Action": [
+      "Action": [
         "ecs:CreateCluster",
         "ecs:DeregisterContainerInstance",
         "ecs:DiscoverPollEndpoint",
@@ -19,7 +19,11 @@
         "logs:CreateLogGroup",
         "logs:CreateLogStream",
         "logs:PutLogEvents",
-        "logs:DescribeLogStreams"
+        "logs:DescribeLogStreams",
+        "ssmmessages:CreateControlChannel",
+        "ssmmessages:CreateDataChannel",
+        "ssmmessages:OpenControlChannel",
+        "ssmmessages:OpenDataChannel"
       ],
       "Resource": [
         "*"
