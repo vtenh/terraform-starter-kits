@@ -207,6 +207,11 @@ variable "app_environments" {
     ios_app_name        = "VTENH"
     ios_app_store_id    ="1548621235"
 
+    payway_checkout_path = ""
+    payway_check_transaction_path = ""
+    payway_return_callback_url = ""
+    payway_continue_success_callback_url = ""
+
     rails_master_key    = ""
     rails_min_instances = 6
     rails_max_instance  = 8
