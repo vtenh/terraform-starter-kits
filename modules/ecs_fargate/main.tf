@@ -20,6 +20,7 @@ resource "aws_ecs_task_definition" "main" {
 
 resource "aws_ecs_service" "main" {
   name            = var.name
+  enable_execute_command = true
   cluster         = aws_ecs_cluster.main.id
   launch_type     = "FARGATE"
   task_definition = aws_ecs_task_definition.main.arn
