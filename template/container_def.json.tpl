@@ -80,13 +80,17 @@
       {"name": "DEFAULT_URL_HOST", "value": "${host}"},
       {"name": "GOOGLE_TAG_MANAGER", "value": "${google_tag_manager}"},
 
-
       {"name": "IOS_APP_NAME", "value": "${ios_app_name}"},
       {"name": "IOS_APP_STORE_ID", "value": "${ios_app_store_id}"},
 
-
       {"name": "MEMCACHE_SERVERS", "value": "${memcached_servers}"},
       {"name": "MODE_ENV", "value": "${app_mode}"},
+
+      {"name": "PAYWAY_CHECKOUT_PATH", "value": "${payway_checkout_path}"},
+      {"name": "PAYWAY_CHECK_TRANSACTION_PATH", "value": "${payway_check_transaction_path}"},
+      {"name": "PAYWAY_RETURN_CALLBACK_URL", "value": "${payway_return_callback_url}"},
+      {"name": "PAYWAY_CONTINUE_SUCCESS_CALLBACK_URL", "value": "${payway_continue_success_callback_url}"},
+
       {"name": "RAILS_TASK_NAME", "value": "${rails_task_name}"},
       {"name": "PROTECTED_USERNAME", "value": "${protected_username}"},
       {"name": "PROTECTED_PASSWORD", "value": "${protected_password}"},
