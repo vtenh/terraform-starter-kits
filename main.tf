@@ -97,6 +97,11 @@ module "iam_ecs" {
   name   = lower(var.name)
 }
 
+
+module "iam_personalize_batch" {
+  source = "./modules/personalize_batch_role"
+}
+
 ################################ ECS EC2 ######################################
 
 # resource "aws_cloudwatch_log_group" "ec2" {
