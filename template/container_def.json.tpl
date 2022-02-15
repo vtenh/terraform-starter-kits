@@ -18,10 +18,6 @@
       }
     ],
     "secrets": [
-      {
-        "name": "SSH_PUBLIC_KEY",
-        "valueFrom": "${ssh_public_key_arn}"
-      }
     ],
     "environment": [
 
