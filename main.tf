@@ -35,7 +35,7 @@ module "redis" {
   subnet_ids           = module.vpc.private_subnet_ids
   security_group_ids   = [module.sg.redis.id]
   node_type            = "cache.t3.small"
-  engine_version       = "6.0.5"
+  engine_version       = "6.x"
   parameter_group_name = "default.redis6.x"
 }
 
@@ -77,20 +77,20 @@ resource "aws_ecr_repository" "main" {
   }
 }
 
-resource "aws_key_pair" "ec2" {
-  key_name   = var.name
-  public_key = file(var.ssh_public_key_file)
-}
+# resource "aws_key_pair" "ec2" {
+#   key_name   = var.name
+#   public_key = file(var.ssh_public_key_file)
+# }
 
-resource "aws_ssm_parameter" "ssh_public_key" {
-  name  = "ssh_public_key"
-  type  = "SecureString"
-  value = file(var.ssh_public_key_file)
+# resource "aws_ssm_parameter" "ssh_public_key" {
+#   name  = "ssh_public_key"
+#   type  = "SecureString"
+#   value = file(var.ssh_public_key_file)
 
-  lifecycle {
-    ignore_changes = [value]
-  }
-}
+#   lifecycle {
+#     ignore_changes = [value]
+#   }
+# }
 
 module "iam_ecs" {
   source = "./modules/ecs_role"
