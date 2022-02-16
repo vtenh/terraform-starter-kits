@@ -17,6 +17,17 @@ variable "min_count" {
 }
 
 variable "metric_type" {
-  description = "CW Metric type (CPU or Memory) to use to trigger auto scalling. Default to CPU"
-  default     = "CPU"
+  description = "CW Metric type (CPU / Memory / RequestCount) to use to trigger auto scalling. Default to CPU. RequestCount is only available for TargetTrackingScaling poliycy"
+
+  default = "CPU"
+}
+
+variable "target_value" {
+  type    = number
+  default = 75
+}
+
+variable "policy_type" {
+  # TargetTrackingScaling, StepScaling
+  default = "StepScaling"
 }
