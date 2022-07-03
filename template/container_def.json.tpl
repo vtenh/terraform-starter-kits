@@ -68,6 +68,10 @@
       {"name": "FB_APP_ID", "value": "${fb_app_id}"},
       {"name": "FB_PAGE_ID", "value": "${fb_page_id}"},
 
+      {"name": "FB_MERCHANT_APP_ID", "value": "${fb_merchant_app_id}"},
+      {"name": "FB_MERCHANT_APP_SECRET", "value": "${fb_merchant_app_secret}"},
+      {"name": "FB_MERCHANT_VERIFY_TOKEN", "value": "${fb_merchant_verify_token}"},
+
       {"name": "FIREBASE_PROJECT_ID", "value": "${firebase_project_id}"},
       {"name": "FIREBASE_SENDER_ID", "value": "${firebase_sender_id}"},
       {"name": "FIREBASE_SERVER_KEY", "value": "${firebase_server_key}"},

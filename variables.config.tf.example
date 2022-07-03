@@ -197,6 +197,9 @@ variable "app_environments" {
 
     fb_app_id                     = "381496249527504"
     fb_page_id                    = "103081091718096"
+    fb_merchant_app_id            = ""
+    fb_merchant_app_secret        = ""
+    fb_merchant_verify_token      = ""
 
     firebase_server_key = ""
 
