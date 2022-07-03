@@ -111,6 +111,7 @@
       {"name": "SMTP_PASSWORD", "value": "${smtp_password}"},
       {"name": "TIME_ZONE", "value": "${time_zone}"},
       {"name": "VDEUK_SECRET_KEY", "value": "${vdeuk_secret_key}"},
+      {"name": "VDEUK_PAGE_URL", "value": "${VDEUK_PAGE_URL}"},
       {"name": "VSHOP_DB_HOST", "value": "${rds_db_host}"},
       {"name": "VSHOP_DB_NAME", "value": "${rds_db_name}"},
       {"name": "VSHOP_DB_NAME_PRODUCTION", "value": "${rds_db_name}"},

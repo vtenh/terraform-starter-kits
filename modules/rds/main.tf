@@ -28,8 +28,8 @@ resource "aws_db_instance" "postgresql" {
   max_allocated_storage = var.max_allocated_storage
   storage_encrypted     = false
 
-  engine         = var.engine
-  engine_version = var.engine_version
+  engine = var.engine
+  # engine_version = var.engine_version
   instance_class = var.postgresql_engine_class
 
   multi_az = true

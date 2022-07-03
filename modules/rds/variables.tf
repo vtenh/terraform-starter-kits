@@ -31,7 +31,7 @@ variable "postgresql_db_password" {
 
 variable "postgresql_engine_version" {
   description = "Engine version, default to the latest version"
-  default     = "12.7"
+  default     = "12.8"
 }
 
 variable "postgresql_engine_class" {
